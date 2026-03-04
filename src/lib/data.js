@@ -53,6 +53,56 @@ export const categories = [
       "Year-round protocol",
     ],
   },
+  {
+    title: "Bypass Fat Supplement",
+    desc: "High-energy fat sources that bypass rumen digestion for better milk fat content.",
+    image: "/images/products/bypass-fat.png",
+    points: [
+      "Increases milk fat percentage",
+      "Boosts energy without acidosis",
+      "Supports high-yielding cows",
+    ],
+  },
+  {
+    title: "Calf Starter Feed",
+    desc: "Nutritionally balanced feed for optimal calf growth and development.",
+    image: "/images/products/calf-supplement.png",
+    points: [
+      "Promotes healthy rumen development",
+      "Enhances growth rate",
+      "Improves immunity in young calves",
+    ],
+  },
+  {
+    title: "Liver Tonic",
+    desc: "Supports liver function and detoxification for better overall health.",
+    image: "/images/products/liver-tonic.png",
+    points: [
+      "Improves digestion and nutrient absorption",
+      "Supports metabolic health",
+      "Reduces liver stress during peak lactation",
+    ],
+  },
+  {
+    title: "Deworming Solution",
+    desc: "Effective parasite control for better feed conversion and health.",
+    image: "/images/products/deworming.png",
+    points: [
+      "Improves feed efficiency",
+      "Reduces parasite load",
+      "Enhances overall cattle health",
+    ],
+  },
+  {
+    title: "High-Performance Feed",
+    desc: "Premium feed formulation for maximum milk production and quality.",
+    image: "/images/products/feed-8000.png",
+    points: [
+      "Optimized for high-yielding herds",
+      "Balanced amino acid profile",
+      "Supports consistent milk production",
+    ],
+  },
 ];
 
 export const heroSlides = [
@@ -174,24 +224,24 @@ export const farmerPainPoints = [
 
 export const whyChooseUs = [
   {
-    title: "Farmer First",
-    desc: "We prioritize farmer profitability over just making sales.",
-    icon: <Users className="h-8 w-8 text-primary" />,
+    title: "Farmer-First Advisory",
+    desc: "We recommend what improves your farm margin, not what increases invoice size.",
+    icon: <Users className="h-8 w-8 text-current" />,
   },
   {
-    title: "Scientific Formula",
-    desc: "ISO 9001:2015 Certified, guaranteeing quality and safety standards.",
-    icon: <Microscope className="h-8 w-8 text-secondary" />,
+    title: "Verified Quality Control",
+    desc: "ISO 9001:2015 backed manufacturing with consistent formulation standards.",
+    icon: <Microscope className="h-8 w-8 text-current" />,
   },
   {
-    title: "Region Specific",
-    desc: "Nutrition mapped to specific breeds, weather, and farm conditions.",
-    icon: <MapPin className="h-8 w-8 text-primary" />,
+    title: "Local & Breed Specific",
+    desc: "Nutrition mapped to breed, weather stress, ration pattern, and lactation stage.",
+    icon: <MapPin className="h-8 w-8 text-current" />,
   },
   {
-    title: "Support Team",
-    desc: "Available 365 days to ensure your farm's success on the ground.",
-    icon: <Headset className="h-8 w-8 text-secondary" />,
+    title: "365-Day Ground Support",
+    desc: "Field guidance, usage correction, and follow-up for measurable on-farm outcomes.",
+    icon: <Headset className="h-8 w-8 text-current" />,
   },
 ];
 
