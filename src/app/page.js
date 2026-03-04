@@ -22,7 +22,6 @@ export default function Home() {
       <BreedFocus />
       <ProductRange />
       <WhyChooseUs />
-      {/* <Testimonials /> */}
       <DealerOpportunity />
       <CareersSection />
     </main>
