@@ -413,8 +413,8 @@ export default function ThirdPartyManufacturingPage() {
             </div>
           </div>
 
-          <div className="lg:col-span-7 bg-text-dark rounded-[3rem] p-10 md:p-16 flex flex-col justify-center text-white relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[100px]" />
+          <div className="lg:col-span-7 rounded-[3rem] p-8 md:p-12 flex flex-col justify-center  relative overflow-hidden ">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-[100px]" />
             <h2 className="text-4xl font-black mb-10 relative z-10">
               Why We Are Different
             </h2>
@@ -438,19 +438,19 @@ export default function ThirdPartyManufacturingPage() {
                 },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-4">
-                  <div className="h-12 w-12 rounded-2xl bg-white/10 flex items-center justify-center text-primary">
+                  <div className="h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
                     {item.icon}
                   </div>
-                  <span className="text-lg font-bold text-white/90">
+                  <span className="text-lg font-bold text-text-dark/80">
                     {item.text}
                   </span>
                 </div>
               ))}
             </div>
-            <div className="mt-12 pt-12 border-t border-white/10 relative z-10">
+            <div className="mt-12 pt-12 border-t border-primary/10 relative z-10">
               <p className="text-2xl font-black text-primary">
                 We don&apos;t compete with your brand. <br />
-                <span className="text-white">We help you grow it.</span>
+                <span className="text-text-dark">We help you grow it.</span>
               </p>
             </div>
           </div>
