@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { farmerPainPoints } from "@/lib/data";
 
 const accentStyles = [
@@ -65,13 +65,13 @@ export default function PainPoints() {
                 </p>
 
                 <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                  <div className="rounded-[1.5rem] border border-primary/10 bg-white/80 p-4">
-                    <div className="text-3xl font-black text-primary">10</div>
+                  <div className="rounded-[1.5rem]">
+                    <div className="text-3xl font-black text-primary">10+</div>
                     <p className="mt-1 text-sm font-semibold text-text-dark/70">
-                      10+ Common Farm Problems Covered
+                      Common Farm Problems Covered
                     </p>
                   </div>
-                  <div className="rounded-[1.5rem] border border-primary/10 bg-white/80 p-4">
+                  <div className="rounded-[1.5rem]">
                     <div className="text-3xl font-black text-text-dark">
                       360°
                     </div>
@@ -79,7 +79,7 @@ export default function PainPoints() {
                       Nutrition, care, fertility and profit focus
                     </p>
                   </div>
-                  <div className="rounded-[1.5rem] border border-primary/10 bg-white/80 p-4">
+                  <div className="rounded-[1.5rem]">
                     <div className="text-3xl font-black text-secondary">
                       Safe
                     </div>
@@ -89,7 +89,7 @@ export default function PainPoints() {
                   </div>
                 </div>
 
-                <div className="mt-8 rounded-[1.75rem] border border-dashed border-primary/15 bg-white/70 p-5">
+                <div className="mt-8">
                   <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary/80">
                     What changed
                   </p>
