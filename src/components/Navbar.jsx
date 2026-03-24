@@ -123,7 +123,7 @@ const Navbar = () => {
             <Button
               variant="ghost"
               size="icon"
-              className="lg:hidden text-white"
+              className="lg:hidden text-white mr-6"
             >
               <Menu />
             </Button>
