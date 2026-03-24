@@ -9,7 +9,6 @@ export default function CareersSection() {
     <section className="w-full relative py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* LEFT CONTENT */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

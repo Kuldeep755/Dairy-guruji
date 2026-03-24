@@ -1,90 +1,71 @@
 "use client";
-import React from "react";
-import {
-  ArrowRight,
-  BadgeCheck,
-  BriefcaseBusiness,
-  CalendarClock,
-  CircleDollarSign,
-  FileText,
-  GraduationCap,
-  HeartHandshake,
-  MapPin,
-  PhoneCall,
-  Sparkles,
-  TrendingUp,
-  Users,
-} from "lucide-react";
+
+import React, { useState } from "react";
+import { ArrowRight, BriefcaseBusiness } from "lucide-react";
+
+const initialFormState = {
+  name: "",
+  email: "",
+  phoneNumber: "",
+  address: "",
+  lsa: "Yes",
+  experience: "",
+};
 
 const CareersPage = () => {
-  const whyJoin = [
-    {
-      title: "Farmer-First Mission",
-      desc: "Your work directly supports dairy families and real farm outcomes.",
-      icon: HeartHandshake,
-    },
-    {
-      title: "Fast Career Growth",
-      desc: "Take ownership early and grow with a rapidly expanding team.",
-      icon: TrendingUp,
-    },
-    {
-      title: "Learning Culture",
-      desc: "Build practical field understanding with structured technical mentorship.",
-      icon: GraduationCap,
-    },
-    {
-      title: "Strong Team Support",
-      desc: "Collaborate with honest, execution-focused people across functions.",
-      icon: Users,
-    },
-  ];
+  const [formData, setFormData] = useState(initialFormState);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitState, setSubmitState] = useState({
+    type: "",
+    message: "",
+  });
 
-  const openings = [
-    {
-      role: "Area Sales Officer",
-      type: "Full-time",
-      location: "Punjab & Haryana",
-      department: "Sales",
-    },
-    {
-      role: "Technical Dairy Advisor",
-      type: "Full-time",
-      location: "Rajasthan",
-      department: "Technical",
-    },
-    {
-      role: "Marketing Executive",
-      type: "Full-time",
-      location: "Jaipur (Hybrid)",
-      department: "Marketing",
-    },
-    {
-      role: "Operations Coordinator",
-      type: "Full-time",
-      location: "Delhi NCR",
-      department: "Operations",
-    },
-  ];
+  const handleChange = (event) => {
+    const { name, value } = event.target;
 
-  const process = [
-    {
-      step: "Application Review",
-      detail: "We evaluate your profile for role-fit and field relevance.",
-      icon: FileText,
-    },
-    {
-      step: "Discussion Round",
-      detail:
-        "A practical discussion with the hiring team on experience and approach.",
-      icon: Users,
-    },
-    {
-      step: "Final Evaluation",
-      detail: "Role expectations, growth path, and compensation alignment.",
-      icon: BadgeCheck,
-    },
-  ];
+    setFormData((current) => ({
+      ...current,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setSubmitState({ type: "", message: "" });
+
+    try {
+      const response = await fetch("/api/careers", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Unable to submit your application.");
+      }
+
+      setSubmitState({
+        type: "success",
+        message:
+          "Application submitted successfully. Your details have been saved.",
+      });
+      setFormData(initialFormState);
+    } catch (error) {
+      setSubmitState({
+        type: "error",
+        message:
+          error.message ||
+          "Something went wrong while submitting the application.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="relative overflow-hidden bg-gradient-to-b from-[#f7f4ea] via-[#f3efdf] to-[#f8f6ee] pb-24 pt-28">
@@ -102,29 +83,11 @@ const CareersPage = () => {
               Apply Now
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-text-dark/70">
-              Submit your details and resume. If your profile matches, our team
-              will contact you quickly.
+              Submit your details. If your profile matches, our team will
+              contact you quickly.
             </p>
 
-            <form
-              action="https://formsubmit.co/dairyguruji@gmail.com"
-              method="POST"
-              encType="multipart/form-data"
-              className="mt-6 space-y-4"
-            >
-              <input type="hidden" name="_form" value="career-application" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input
-                type="hidden"
-                name="_autoresponse"
-                value="Thank you for your application! We will review your resume and contact you if there's a match."
-              />
-              <input
-                type="hidden"
-                name="_next"
-                value="https://www.dairyguruji.com/careers?success=true"
-              />
-
+            <form onSubmit={handleSubmit} className="mt-6 space-y-4">
               <div>
                 <label className="mb-2 block text-xs font-black uppercase tracking-widest text-text-dark/50">
                   Full Name
@@ -133,6 +96,8 @@ const CareersPage = () => {
                   type="text"
                   name="name"
                   placeholder="Enter your full name"
+                  value={formData.name}
+                  onChange={handleChange}
                   required
                   className="w-full rounded-lg border border-primary/15 bg-bg-light px-4 py-3 text-sm placeholder:text-text-dark/45 focus:outline-none focus:ring-2 focus:ring-primary/35"
                 />
@@ -146,6 +111,8 @@ const CareersPage = () => {
                   type="email"
                   name="email"
                   placeholder="name@email.com"
+                  value={formData.email}
+                  onChange={handleChange}
                   required
                   className="w-full rounded-lg border border-primary/15 bg-bg-light px-4 py-3 text-sm placeholder:text-text-dark/45 focus:outline-none focus:ring-2 focus:ring-primary/35"
                 />
@@ -153,39 +120,49 @@ const CareersPage = () => {
 
               <div>
                 <label className="mb-2 block text-xs font-black uppercase tracking-widest text-text-dark/50">
-                  Role Interested In
+                  Phone Number
                 </label>
-                <select
-                  name="role"
-                  className="w-full rounded-lg border border-primary/15 bg-bg-light px-4 py-3 text-sm text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/35"
-                >
-                  <option value="Regional Sales Manager">
-                    Regional Sales Manager
-                  </option>
-                  <option value="Area Sales Manager">Area Sales Manager</option>
-                  <option value="Senior Sales Officer">
-                    Senior Sales Officer
-                  </option>
-                  <option value="Sales Officer">Sales Officer</option>
-                  <option value="Sales Executive">Sales Executive</option>
-                  <option value="Sales Executive">Tele Caller</option>
-                </select>
+                <input
+                  type="tel"
+                  name="phoneNumber"
+                  placeholder="Enter your phone number"
+                  value={formData.phoneNumber}
+                  onChange={handleChange}
+                  required
+                  className="w-full rounded-lg border border-primary/15 bg-bg-light px-4 py-3 text-sm placeholder:text-text-dark/45 focus:outline-none focus:ring-2 focus:ring-primary/35"
+                />
               </div>
 
               <div>
                 <label className="mb-2 block text-xs font-black uppercase tracking-widest text-text-dark/50">
-                  Expected CTC (Optional)
+                  Address
                 </label>
-                <div className="relative">
-                  <p className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-dark/45" />
-                  <input
-                    type="text"
-                    name="ctc"
-                    placeholder="Enter annual CTC"
-                    className="w-full rounded-lg border border-primary/15 bg-bg-light py-3 pl-9 pr-4 text-sm placeholder:text-text-dark/45 focus:outline-none focus:ring-2 focus:ring-primary/35"
-                  />
-                </div>
+                <input
+                  type="text"
+                  name="address"
+                  placeholder="Enter your address"
+                  value={formData.address}
+                  onChange={handleChange}
+                  required
+                  className="w-full rounded-lg border border-primary/15 bg-bg-light px-4 py-3 text-sm placeholder:text-text-dark/45 focus:outline-none focus:ring-2 focus:ring-primary/35"
+                />
               </div>
+
+              <div>
+                <label className="mb-2 block text-xs font-black uppercase tracking-widest text-text-dark/50">
+                  LSA
+                </label>
+                <select
+                  name="lsa"
+                  value={formData.lsa}
+                  onChange={handleChange}
+                  className="w-full rounded-lg border border-primary/15 bg-bg-light px-4 py-3 text-sm text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/35"
+                >
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+
               <div>
                 <label className="mb-2 block text-xs font-black uppercase tracking-widest text-text-dark/50">
                   Years Of Experience
@@ -196,29 +173,31 @@ const CareersPage = () => {
                     type="text"
                     name="experience"
                     placeholder="(e.g. 3 years in dairy sales)"
+                    value={formData.experience}
+                    onChange={handleChange}
                     className="w-full rounded-lg border border-primary/15 bg-bg-light py-3 pl-9 pr-4 text-sm placeholder:text-text-dark/45 focus:outline-none focus:ring-2 focus:ring-primary/35"
                   />
                 </div>
               </div>
 
-              <div>
-                <label className="mb-2 block text-xs font-black uppercase tracking-widest text-text-dark/50">
-                  Upload Resume (PDF)
-                </label>
-                <input
-                  type="file"
-                  name="resume"
-                  accept=".pdf,.doc,.docx"
-                  required
-                  className="w-full rounded-lg border border-dashed border-primary/25 bg-primary/5 px-4 py-3 text-sm text-text-dark/80 file:mr-4 file:rounded-md file:border-0 file:bg-secondary file:px-3 file:py-1.5 file:font-bold file:text-text-dark"
-                />
-              </div>
+              {submitState.message ? (
+                <p
+                  className={`rounded-lg px-4 py-3 text-sm font-medium ${
+                    submitState.type === "success"
+                      ? "bg-green-50 text-green-700"
+                      : "bg-red-50 text-red-700"
+                  }`}
+                >
+                  {submitState.message}
+                </p>
+              ) : null}
 
               <button
                 type="submit"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3.5 text-sm font-black uppercase tracking-wider text-white transition hover:translate-y-[-1px]"
+                disabled={isSubmitting}
+                className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3.5 text-sm font-black uppercase tracking-wider text-white transition hover:translate-y-[-1px] disabled:cursor-not-allowed disabled:opacity-70"
               >
-                Submit Application
+                {isSubmitting ? "Submitting..." : "Submit Application"}
                 <ArrowRight className="h-4 w-4" />
               </button>
             </form>

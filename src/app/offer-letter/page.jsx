@@ -10,6 +10,11 @@ import AsmSpecificPage from "./components/AsmSpecificPage";
 import SiSpecificPage from "./components/SiSpecificPage";
 
 export default function OfferLetterPage() {
+  // Redirect to home page if accessed directly
+  if (typeof window !== 'undefined') {
+    window.location.href = '/';
+    return null;
+  }
   const [role, setRole] = useState("ASM");
   const [formData, setFormData] = useState({
     date: new Date().toISOString().split("T")[0],

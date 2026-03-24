@@ -26,7 +26,6 @@ const navItems = [
   { href: "/about", label: "About" },
   { href: "/manufacturing/third-party-manufacturing", label: "Manufacturing" },
   { href: "/csr", label: "CSR" },
-  // { href: "/team", label: "Our Team" },
   { href: "/careers", label: "Careers" },
   { href: "/contact", label: "Contact" },
   { href: "/products", label: "Products" },
@@ -61,7 +60,6 @@ const Navbar = () => {
           : "bg-gradient-to-b from-black/80 to-transparent py-4"
       }`}
     >
-      {/* Scroll Progress Bar */}
       <div
         className="absolute bottom-0 left-0 h-[2px] bg-secondary transition-all duration-300"
         style={{ width: `${scrollProgress}%` }}
