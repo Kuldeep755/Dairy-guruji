@@ -126,7 +126,7 @@ export default function CSRPage() {
               <svg width="100" height="80" viewBox="0 0 100 80" fill="currentColor"><path d="M0 80V37.5L25 0H47.5L30 37.5H47.5V80H0ZM52.5 80V37.5L77.5 0H100L82.5 37.5H100V80H52.5Z"/></svg>
            </motion.div>
            <h3 className="text-3xl md:text-5xl font-black text-white italic leading-tight mb-12">
-             "Our success is only meaningful when it reflects in the lives of the farmers who work with us every single day."
+             &ldquo;Our success is only meaningful when it reflects in the lives of the farmers who work with us every single day.&rdquo;
            </h3>
            <p className="text-secondary font-bold text-xl uppercase tracking-widest">— Himanshu, Founder</p>
         </div>

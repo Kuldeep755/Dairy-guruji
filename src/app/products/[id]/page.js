@@ -276,7 +276,7 @@ export default async function ProductDetailPage({ params }) {
                   Result story
                 </p>
                 <blockquote className="mt-4 text-lg font-bold leading-relaxed text-text-dark md:text-2xl">
-                  "{product.farmerStory.quote}"
+                  &ldquo;{product.farmerStory.quote}&rdquo;
                 </blockquote>
 
                 <div className="mt-5 grid gap-4 sm:grid-cols-3">

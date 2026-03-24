@@ -102,7 +102,7 @@ export default function TeamPage() {
                     Our Shared <span className="text-primary italic">Values</span>
                  </h2>
                  <p className="text-lg text-text-dark/70 leading-relaxed max-w-xl">
-                    Our team isn't just composed of experts; we are people who believe in the growth of Indian rural communities. We operate on a foundation of trust, scientific rigor, and farmer-first empathy.
+                    Our team isn&apos;t just composed of experts; we are people who believe in the growth of Indian rural communities. We operate on a foundation of trust, scientific rigor, and farmer-first empathy.
                  </p>
               </div>
 
