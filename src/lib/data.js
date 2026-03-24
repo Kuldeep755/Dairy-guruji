@@ -1,4 +1,13 @@
-import { Activity, Milk, Droplet, ShieldCheck, Users, Microscope, MapPin, Headset } from "lucide-react";
+import {
+  Activity,
+  Milk,
+  Droplet,
+  ShieldCheck,
+  Users,
+  Microscope,
+  MapPin,
+  Headset,
+} from "lucide-react";
 
 export const highlights = [
   "No harmful shortcuts",
@@ -8,9 +17,9 @@ export const highlights = [
 ];
 
 export const trustStats = [
-  { label: "Villages reached", value: "240+" },
-  { label: "Active farmer partners", value: "3,500+" },
-  { label: "Average repeat purchase", value: "82%" },
+  { label: "Villages reached", value: "40872+" },
+  { label: "Active farmer partners", value: "5 lac+" },
+  { label: "Average repeat purchase", value: "99%" },
   { label: "Field consultation days", value: "365" },
 ];
 
@@ -34,97 +43,127 @@ export const impactPoints = [
 
 export const categories = [
   {
-    title: "Milk Let Down Support",
-    desc: "Hormone-free support for smoother milking and better daily yield.",
-    image: "/images/products/mld.png",
+    title: "Milk Let Down (MLD)",
+    desc: "MLD helps cows and buffaloes release milk easily and naturally, reducing stress and improving milk yield without harmful injections.",
+    image: "/images/products/mld.jpeg",
     points: [
-      "Supports calm milking",
-      "Helps reduce stress",
-      "Daily-use friendly",
+      "Smooth milk let-down",
+      "Higher milk production",
+      "Safe alternative to oxytocin",
     ],
   },
   {
-    title: "Mineral Balance",
-    desc: "Complete mineral coverage for fertility, immunity and milk quality.",
+    title: "Mineral Mixture",
+    desc: "A scientifically balanced mineral supplement designed to correct deficiencies, improve metabolism, and enhance dairy performance.",
     image: "/images/products/mineral.png",
     points: [
-      "Macro + trace support",
-      "Palatable intake profile",
-      "Year-round protocol",
+      "Improves milk yield & quality",
+      "Supports reproduction & immunity",
+      "Enhances nutrient absorption",
     ],
   },
   {
-    title: "Bypass Fat Supplement",
-    desc: "High-energy fat sources that bypass rumen digestion for better milk fat content.",
+    title: "Bypass Fat",
+    desc: "A scientifically formulated rumen bypass fat supplement designed to provide high-density energy without disturbing rumen function, supporting peak lactation and body condition.",
     image: "/images/products/bypass-fat.png",
     points: [
-      "Increases milk fat percentage",
-      "Boosts energy without acidosis",
-      "Supports high-yielding cows",
+      "Increases milk yield and fat %",
+      "Prevents negative energy balance and milk fever",
+      "Supports better body condition and recovery post-calving",
     ],
   },
   {
-    title: "Calf Starter Feed",
-    desc: "Nutritionally balanced feed for optimal calf growth and development.",
-    image: "/images/products/calf-supplement.png",
+    title: "Calf-Supplement",
+    desc: "A scientifically formulated supplement enriched with essential minerals, vitamins, amino acid chelates, and herbal actives to support optimal growth and health in calves.",
+    image: "/images/products/calf-supplement.jpeg",
     points: [
-      "Promotes healthy rumen development",
-      "Enhances growth rate",
-      "Improves immunity in young calves",
-    ],
-  },
-  {
-    title: "Liver Tonic",
-    desc: "Supports liver function and detoxification for better overall health.",
-    image: "/images/products/liver-tonic.png",
-    points: [
+      "Promotes faster growth and strong bone development",
+      "Enhances immunity and disease resistance",
       "Improves digestion and nutrient absorption",
-      "Supports metabolic health",
-      "Reduces liver stress during peak lactation",
     ],
   },
   {
-    title: "Deworming Solution",
-    desc: "Effective parasite control for better feed conversion and health.",
+    title: "Deworming Bolus",
+    desc: "Powerful herbal parasite control designed to manage internal worms while supporting digestion, immunity, and dairy productivity.",
     image: "/images/products/deworming.png",
     points: [
-      "Improves feed efficiency",
-      "Reduces parasite load",
-      "Enhances overall cattle health",
+      "Controls internal worms and parasite burden",
+      "Improves digestion and feed utilization",
+      "Supports appetite, body condition, and milk output",
     ],
   },
   {
-    title: "High-Performance Feed",
-    desc: "Premium feed formulation for maximum milk production and quality.",
-    image: "/images/products/feed-8000.png",
+    title: "6000+ Feed",
+    desc: "A scientifically balanced cattle feed formulated with optimal protein, minerals, amino acids, and toxin binders to support high milk production and overall animal performance.",
+    image: "/images/products/feed-6000.png",
+    points: [
+      "Boosts milk yield, fat & SNF",
+      "Improves feed efficiency and digestion",
+      "Enhances immunity and body condition",
+    ],
+  },
+  {
+    title: "8000+ Feed",
+    desc: "An advanced, nutrient-rich cattle feed formulated with high protein, essential minerals, vitamins, amino acids, and toxin binders to support peak milk production and animal health.",
+    image: "/images/products/feed-8000.jpeg",
     points: [
       "Optimized for high-yielding herds",
       "Balanced amino acid profile",
       "Supports consistent milk production",
     ],
   },
+
+  {
+    title: "Dairy Guruji -H",
+    desc: "A scientifically formulated liquid supplement enriched with vitamins (A, D3, E, B12, Biotin) and trace minerals to support udder health and reduce mastitis-related issues in dairy animals.",
+    image: "/images/products/dairy-guruji-h.png",
+    points: [
+      "Helps reduce udder inflammation and infection risk",
+      "Supports tissue repair and udder recovery",
+      "Improves milk quality and lowers SCC",
+    ],
+  },
+  {
+    title: "Calcium",
+    desc: "A scientifically balanced calcium supplement enriched with vitamins and trace minerals to support bone strength, milk production, and metabolic health in dairy animals.",
+    image: "/images/products/calcium.png",
+    points: [
+      "Strengthens bones and prevents calcium deficiency",
+      "Helps prevent milk fever (hypocalcemia)",
+      "Improves milk yield and fat content",
+      ,
+    ],
+  },
+  {
+    title: "Liver Tonic",
+    desc: "A scientifically formulated supplement enriched with vitamins, minerals, and herbal extracts to support liver function, improve metabolism, and enhance overall productivity in dairy animals.",
+    image: "/images/products/dairy-guruji-h.png",
+    points: [
+      "Supports liver detoxification and function",
+      "Improves appetite and feed efficiency",
+      "Enhances milk yield, fat & SNF",
+      ,
+    ],
+  },
 ];
 
 export const heroSlides = [
   {
-    image: "/images/hero/slide1.png",
-    title: "Healthy Cattle. Higher Milk Yield.",
-    subtitle: "Scientifically designed nutrition for modern dairy farms.",
-    cta: "Explore Products",
-    link: "/products",
-  },
-  {
-    image: "/images/hero/slide2.png",
-    title: "Build Your Own Dairy Feed Brand",
-    subtitle: "Third Party Manufacturing Across India.",
-    cta: "Start Your Brand",
-    link: "/manufacturing/third-party-manufacturing",
-  },
-  {
-    image: "/images/hero/slide3.png",
-    title: "Golden Opportunity for Dealers",
-    subtitle: "High margins. Exclusive territory. Strong support.",
+    image: "/images/hero/slide4.jpeg",
+    title:
+      "Helping Indian Dairy Farmers To Grow.",
+    subtitle:
+      "सही जानकारी, अच्छे पोषण और नए तरीकों से मेरे भारतीय पशुपालन को जयादा मुनाफे का बनाना",
     cta: "Become a Dealer",
+    link: "/dealer",
+  },
+  {
+    image: "/images/hero/slide5.jpeg",
+    title:
+      "Dairy Farm Adoption",
+    subtitle:
+      "हम आपके डेयरी फ़ार्म को गोद लेकर उसे ज्यादा मुनाफ़े वाला बनाएंगे – ज्यादा दूध, स्वस्थ पशु, बेहतर नस्ल और कम खर्च के साथ",
+    cta: "Start With Us",
     link: "/dealer",
   },
 ];
@@ -132,13 +171,22 @@ export const heroSlides = [
 export const aboutHero = {
   image: "/images/about/hero.png",
   title: "About Dairy Guru Ji",
-  subtitle: "More than just nutrition—a movement for scientific dairy farming in India.",
+  subtitle:
+    "More than just nutrition—a movement for scientific dairy farming in India.",
 };
 
 export const manufacturingHero = {
   image: "/images/hero/slide2.png",
   title: "Third Party Manufacturing",
-  subtitle: "Build your own premium dairy feed brand with our ISO certified facility.",
+  subtitle:
+    "Build your own premium dairy feed brand with our ISO certified facility.",
+};
+
+export const manufacturingVideo = {
+  title: "See Our Manufacturing Story",
+  subtitle:
+    "Add your featured YouTube video here to give visitors a quick look at your process, quality, and facility.",
+  url: "https://youtube.com/shorts/k-XdBzgp8I8?si=QSKkQIDSzvSGyZFh",
 };
 
 export const processSteps = [
@@ -218,19 +266,63 @@ export const faqs = [
 
 export const farmerPainPoints = [
   {
-    problem: "Declining Milk Yield?",
-    solution: "Improve milk volume and quality with targeted nutrition.",
-    icon: <Milk className="h-8 w-8 text-primary" />,
+    problem: "Low Milk Production?",
+    solution: "Improve yield with balanced nutrition and scientific feeding.",
+    image: "/images/pain-point/one.jpg",
   },
   {
-    problem: "Hard Milking Issues?",
-    solution: "Natural milk let-down with our hormone-free solutions.",
-    icon: <Droplet className="h-8 w-8 text-primary" />,
+    problem: "Less Fat and SNF Levels?",
+    solution:
+      "Boost milk quality through targeted minerals and better ration management.",
+    image: "/images/pain-point/two.webp",
   },
   {
-    problem: "Frequent Illness?",
-    solution: "Build stronger herds with immunity-enhancing formulation.",
-    icon: <ShieldCheck className="h-8 w-8 text-primary" />,
+    problem: "Repeat Breeding Problems?",
+    solution:
+      "Support fertility with proper nutrition, heat detection, and reproductive care.",
+    image: "/images/pain-point/three.jpg",
+  },
+  {
+    problem: "Weak Immunity in Animals?",
+    solution:
+      "Build stronger animals with immunity-supporting nutrition and better management.",
+    image: "/images/pain-point/four.jpg",
+  },
+  {
+    problem: "Animals Falling Sick Frequently?",
+    solution:
+      "Reduce health issues with preventive care and balanced supplementation.",
+    image: "/images/pain-point/fifth.webp",
+  },
+  {
+    problem: "High Feed Cost, Low Profit?",
+    solution:
+      "Increase farm efficiency with smart feeding and cost-effective nutrition plans.",
+    image: "/images/pain-point/sixth.jpg",
+  },
+  {
+    problem: "Poor Calf Growth?",
+    solution:
+      "Ensure stronger future animals with proper calf nutrition and early care.",
+    image: "/images/pain-point/wet-calf.webp",
+  },
+  {
+    problem: "Milk Let-Down Problems?",
+    solution:
+      "Support smooth milking with stress-free management and natural solutions.",
+    image: "/images/pain-point/milk.webp",
+  },
+  {
+    problem: "Low Appetite in Animals?",
+    solution:
+      "Improve feed intake with better gut health and palatable nutrition support.",
+    image: "/images/pain-point/cow.jpg",
+  },
+  {
+    problem: "Poor Body Condition and Weakness?",
+    solution:
+      "Restore strength with energy-rich feed and proper mineral balance.",
+    image: "/images/pain-point/poor.jpg",
   },
 ];
 
@@ -287,7 +379,8 @@ export const csrInitiatives = [
     id: "green-planet",
     title: "Project Green Planet",
     desc: "Our commitment to environmental sustainability through manure management and renewable energy integration in dairy farms.",
-    fullDesc: "We believe that dairy farming should be in harmony with nature. Project Green Planet focuses on educating farmers about efficient waste management, converting manure into bio-fertilizer, and integrating solar energy to power cattle sheds. This reduced carbon footprint ensures a healthier planet for the next generation of farmers.",
+    fullDesc:
+      "We believe that dairy farming should be in harmony with nature. Project Green Planet focuses on educating farmers about efficient waste management, converting manure into bio-fertilizer, and integrating solar energy to power cattle sheds. This reduced carbon footprint ensures a healthier planet for the next generation of farmers.",
     image: "/images/impact/impact_green.png",
     stats: "50+ Solar-Ready Sheds Installed",
   },
@@ -295,7 +388,8 @@ export const csrInitiatives = [
     id: "health-happiness",
     title: "Netra Jyoti Sewa",
     desc: "A health-first approach for our farmer partners, providing free eye checkups and general medical camps.",
-    fullDesc: "A healthy farmer is the backbone of a successful farm. Through our 'Health & Happiness' initiative, we organize regular medical camps in rural hubs. We provide free eye screenings, general checkups, and distribute essential medicines. To date, we have supported over 2,000 farmer families through these camps.",
+    fullDesc:
+      "A healthy farmer is the backbone of a successful farm. Through our 'Health & Happiness' initiative, we organize regular medical camps in rural hubs. We provide free eye screenings, general checkups, and distribute essential medicines. To date, we have supported over 2,000 farmer families through these camps.",
     image: "/images/impact/impact_health.png",
     stats: "2,000+ Families Supported",
   },
@@ -303,7 +397,8 @@ export const csrInitiatives = [
     id: "digital-education",
     title: "Digital Dairy Hubs",
     desc: "Empowering rural youth with digital tools for modern cattle health monitoring and farm management.",
-    fullDesc: "The future of dairy is digital. Our Digital Dairy Hubs program provides tablets and training to rural youth, teaching them how to track milk yield fluctuations, reproductive cycles, and nutrition schedules using modern software. This empowerment creates tech-savvy leaders in the rural community.",
+    fullDesc:
+      "The future of dairy is digital. Our Digital Dairy Hubs program provides tablets and training to rural youth, teaching them how to track milk yield fluctuations, reproductive cycles, and nutrition schedules using modern software. This empowerment creates tech-savvy leaders in the rural community.",
     image: "/images/impact/impact_education.png",
     stats: "15+ Digital Hubs Established",
   },
@@ -344,9 +439,24 @@ export const socialImpact = [
 
 export const breeds = [
   {
-    breed: "Sahiwal",
-    image: "/images/breeds/sahiwal.png",
-    desc: "Optimized for indigenous resilience and high heat-stress tolerance.",
+    breed: "Jaffarabadi",
+    image: "/images/breeds/jaffarabadi.jpg",
+    desc: "Large, powerful buffalo breed known for heavy milk yield, rich fat, and strong body build.",
+  },
+  {
+    breed: "Murrah",
+    image: "/images/breeds/murrah-buffalo.jpg",
+    desc: "Strong, high-milk buffalo known for rich fat and easy adaptability, ideal for profitable dairy farming.",
+  },
+  {
+    breed: "Girlando",
+    image: "/images/breeds/girlando.jpg",
+    desc: "High-yield tropical dairy breed (Holstein × Gir) with strong milk output and heat adaptability.",
+  },
+  {
+    breed: "Jersey",
+    image: "/images/breeds/jersey.png",
+    desc: "Rich milk breed with high fat and protein, ideal for profitable dairy farming.",
   },
   {
     breed: "Gir",
@@ -355,7 +465,7 @@ export const breeds = [
   },
   {
     breed: "HF Cross",
-    image: "/images/breeds/hf.jpeg",
-    desc: "Stability support for high-yielders to prevent metabolic depletion.",
+    image: "/images/breeds/hf.jpg",
+    desc: "High milk-yield breed, ideal for profitable large-scale dairy farming.",
   },
 ];

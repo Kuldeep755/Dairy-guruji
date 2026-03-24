@@ -18,8 +18,8 @@ export default function Home() {
       <AboutFounder />
       <Stats />
       <PainPoints />
-      <BreedFocus />
       <ProductRange />
+      <BreedFocus />
       <SocialImpact />
       <WhyChooseUs />
       <DealerOpportunity />

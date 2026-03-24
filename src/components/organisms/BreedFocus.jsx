@@ -13,22 +13,24 @@ export default function BreedFocus() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
         {/* Heading */}
         <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 mb-5">
-            <span className="text-xs font-bold uppercase tracking-widest text-secondary">
-              Breed-Specific Nutrition
-            </span>
-          </div>
-
           <h2 className="text-3xl md:text-5xl font-black text-text-dark leading-tight mb-6">
-            Real Farms. Real <span className="text-secondary">Breeds.</span>
+            Bringing World-Class <span className="text-secondary">Dairy.</span>
             <br />
-            Scientific <span className="text-primary">Results.</span>
+            Genetics to Indian <span className="text-primary">Farms.</span>
           </h2>
 
           <p className="text-lg text-text-dark/70 leading-relaxed">
-            Nutrition is never one-size-fits-all. We design support by breed,
-            climate and farm conditions for maximum efficacy and livestock
-            longevity.
+            Dairy Guruji aims to make better dairy genetics more accessible and
+            affordable for Indian farmers through breeding support, practical
+            guidance, and future herd improvement solutions. By connecting
+            farmers with stronger breeding opportunities, including semen and
+            embryo-based genetic progress, Dairy Guruji wants to help improve
+            milk potential, breed quality, and overall herd performance. This
+            will support farmers in building healthier animals, stronger
+            replacement stock, and a more productive dairy farm. The goal is to
+            help even small and growing farmers benefit from better genetics,
+            leading to improved profitability, long-term herd development, and a
+            stronger future for Indian dairy farming.
           </p>
         </div>
 

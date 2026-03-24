@@ -75,7 +75,8 @@ const CareersPage = () => {
     },
     {
       step: "Discussion Round",
-      detail: "A practical discussion with the hiring team on experience and approach.",
+      detail:
+        "A practical discussion with the hiring team on experience and approach.",
       icon: Users,
     },
     {
@@ -91,145 +92,38 @@ const CareersPage = () => {
       <div className="pointer-events-none absolute top-10 right-[-10%] h-[28rem] w-[28rem] rounded-full bg-secondary/30 blur-3xl" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <section className="relative overflow-hidden rounded-3xl border border-primary/15 bg-white p-8 shadow-xl md:p-12">
-          <div className="absolute -right-24 -top-20 h-64 w-64 rounded-full bg-primary/10" />
-          <div className="absolute -bottom-28 left-20 h-56 w-56 rounded-full bg-secondary/20" />
-
-          <div className="relative grid grid-cols-1 gap-10 lg:grid-cols-3 lg:items-center">
-            <div className="lg:col-span-2">
-              <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-primary">
-                <Sparkles className="h-4 w-4" />
-                Careers at Dairy Guru Ji
-              </span>
-              <h1 className="mt-5 text-4xl font-black leading-tight text-text-dark md:text-6xl">
-                Grow Your Career With
-                <span className="mt-2 block text-primary">Real On-Ground Impact</span>
-              </h1>
-              <p className="mt-5 max-w-3xl text-base leading-relaxed text-text-dark/75 md:text-lg">
-                Join a team focused on farmer prosperity, scientific nutrition,
-                and ethical growth. If you are ownership-driven and serious
-                about execution, we would like to hear from you.
-              </p>
-
-              <div className="mt-7 grid max-w-2xl grid-cols-2 gap-3 md:grid-cols-4">
-                {[
-                  "High ownership",
-                  "Field-driven work",
-                  "Learning support",
-                  "Growth path",
-                ].map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-xl border border-primary/10 bg-bg-light px-3 py-3 text-center text-xs font-bold text-text-dark/80"
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-primary/15 bg-bg-light p-6 shadow-sm">
-              <h2 className="text-lg font-black uppercase tracking-wider text-text-dark">
-                Quick Apply Details
-              </h2>
-              <div className="mt-4 space-y-4 text-sm">
-                <div>
-                  <p className="font-bold text-text-dark">Email Resume</p>
-                  <p className="text-text-dark/70">dairyguruji@gmail.com</p>
-                </div>
-                <div>
-                  <p className="font-bold text-text-dark">Phone</p>
-                  <p className="text-text-dark/70">+91 81680-48260</p>
-                </div>
-                <div>
-                  <p className="font-bold text-text-dark">Mode</p>
-                  <p className="text-text-dark/70">Field / Hybrid (Role dependent)</p>
-                </div>
-              </div>
-              <a
-                href="tel:+918168048260"
-                className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-md bg-text-dark px-4 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5"
-              >
-                <PhoneCall className="h-4 w-4" />
-                Talk to Hiring Team
-              </a>
-            </div>
-          </div>
-        </section>
-
         <section className="mt-14 grid grid-cols-1 gap-8 lg:grid-cols-3">
-          <div className="space-y-6 lg:col-span-2">
-            <div>
-              <h2 className="text-3xl font-black text-text-dark md:text-4xl">
-                Why Join Us
-              </h2>
-              <p className="mt-2 text-text-dark/70">
-                A mission-led workplace with clear accountability and long-term growth.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-              {whyJoin.map((item) => (
-                <article
-                  key={item.title}
-                  className="rounded-2xl border border-primary/12 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
-                >
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                    <item.icon className="h-6 w-6" />
-                  </div>
-                  <h3 className="text-lg font-black text-text-dark">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-text-dark/70">{item.desc}</p>
-                </article>
-              ))}
-            </div>
-
-            <div className="rounded-2xl border border-primary/12 bg-white p-6 shadow-sm md:p-8">
-              <h3 className="text-2xl font-black text-text-dark">Open Positions</h3>
-              <div className="mt-5 space-y-3">
-                {openings.map((job) => (
-                  <div
-                    key={job.role}
-                    className="rounded-xl border border-primary/10 bg-bg-light p-4"
-                  >
-                    <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-                      <div>
-                        <p className="font-black text-text-dark">{job.role}</p>
-                        <p className="mt-0.5 text-sm text-text-dark/70">
-                          {job.department} • {job.type}
-                        </p>
-                      </div>
-                      <div className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
-                        <MapPin className="h-4 w-4" />
-                        {job.location}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
           <aside className="rounded-3xl border border-primary/20 bg-white p-7 shadow-xl md:p-8">
             <div className="inline-flex items-center gap-2 rounded-full bg-secondary/20 px-4 py-1.5 text-xs font-black uppercase tracking-[0.2em] text-text-dark">
               <BriefcaseBusiness className="h-4 w-4" />
               Application Form
             </div>
-            <h3 className="mt-5 text-3xl font-black text-text-dark">Apply Now</h3>
+            <h3 className="mt-5 text-3xl font-black text-text-dark">
+              Apply Now
+            </h3>
             <p className="mt-3 text-sm leading-relaxed text-text-dark/70">
               Submit your details and resume. If your profile matches, our team
               will contact you quickly.
             </p>
 
-            <form 
-              action="https://formsubmit.co/dairyguruji@gmail.com" 
+            <form
+              action="https://formsubmit.co/dairyguruji@gmail.com"
               method="POST"
               encType="multipart/form-data"
               className="mt-6 space-y-4"
             >
               <input type="hidden" name="_form" value="career-application" />
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_autoresponse" value="Thank you for your application! We will review your resume and contact you if there's a match." />
-              <input type="hidden" name="_next" value="https://www.dairyguruji.com/careers?success=true" />
+              <input
+                type="hidden"
+                name="_autoresponse"
+                value="Thank you for your application! We will review your resume and contact you if there's a match."
+              />
+              <input
+                type="hidden"
+                name="_next"
+                value="https://www.dairyguruji.com/careers?success=true"
+              />
 
               <div>
                 <label className="mb-2 block text-xs font-black uppercase tracking-widest text-text-dark/50">
@@ -261,14 +155,20 @@ const CareersPage = () => {
                 <label className="mb-2 block text-xs font-black uppercase tracking-widest text-text-dark/50">
                   Role Interested In
                 </label>
-                <select 
+                <select
                   name="role"
                   className="w-full rounded-lg border border-primary/15 bg-bg-light px-4 py-3 text-sm text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/35"
                 >
-                  <option value="Area Sales Officer">Area Sales Officer</option>
-                  <option value="Technical Dairy Advisor">Technical Dairy Advisor</option>
-                  <option value="Marketing Executive">Marketing Executive</option>
-                  <option value="Operations Coordinator">Operations Coordinator</option>
+                  <option value="Regional Sales Manager">
+                    Regional Sales Manager
+                  </option>
+                  <option value="Area Sales Manager">Area Sales Manager</option>
+                  <option value="Senior Sales Officer">
+                    Senior Sales Officer
+                  </option>
+                  <option value="Sales Officer">Sales Officer</option>
+                  <option value="Sales Executive">Sales Executive</option>
+                  <option value="Sales Executive">Tele Caller</option>
                 </select>
               </div>
 
@@ -277,11 +177,25 @@ const CareersPage = () => {
                   Expected CTC (Optional)
                 </label>
                 <div className="relative">
-                  <CircleDollarSign className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-dark/45" />
+                  <p className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-dark/45" />
                   <input
                     type="text"
                     name="ctc"
                     placeholder="Enter annual CTC"
+                    className="w-full rounded-lg border border-primary/15 bg-bg-light py-3 pl-9 pr-4 text-sm placeholder:text-text-dark/45 focus:outline-none focus:ring-2 focus:ring-primary/35"
+                  />
+                </div>
+              </div>
+              <div>
+                <label className="mb-2 block text-xs font-black uppercase tracking-widest text-text-dark/50">
+                  Years Of Experience
+                </label>
+                <div className="relative">
+                  <p className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-dark/45" />
+                  <input
+                    type="text"
+                    name="experience"
+                    placeholder="(e.g. 3 years in dairy sales)"
                     className="w-full rounded-lg border border-primary/15 bg-bg-light py-3 pl-9 pr-4 text-sm placeholder:text-text-dark/45 focus:outline-none focus:ring-2 focus:ring-primary/35"
                   />
                 </div>
@@ -309,61 +223,6 @@ const CareersPage = () => {
               </button>
             </form>
           </aside>
-        </section>
-
-        <section className="mt-14 rounded-3xl border border-primary/15 bg-white p-8 shadow-lg md:p-10">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-            <div>
-              <h2 className="text-3xl font-black text-text-dark">Hiring Process</h2>
-              <p className="mt-2 text-sm text-text-dark/70">
-                Transparent and practical process with fast communication.
-              </p>
-            </div>
-
-            <div className="space-y-4 lg:col-span-2">
-              {process.map((item, index) => (
-                <div
-                  key={item.step}
-                  className="flex gap-4 rounded-xl border border-primary/10 bg-bg-light p-4"
-                >
-                  <div className="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                    <item.icon className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-black uppercase tracking-wider text-primary">
-                      Step {index + 1}
-                    </p>
-                    <h3 className="mt-1 font-black text-text-dark">{item.step}</h3>
-                    <p className="mt-1 text-sm text-text-dark/70">{item.detail}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
-          <div className="rounded-2xl border border-primary/12 bg-white p-5">
-            <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-              <CalendarClock className="h-5 w-5" />
-            </div>
-            <h3 className="mt-3 font-black text-text-dark">Timely Process</h3>
-            <p className="mt-1 text-sm text-text-dark/70">Shortlisting and updates shared quickly.</p>
-          </div>
-          <div className="rounded-2xl border border-primary/12 bg-white p-5">
-            <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-              <TrendingUp className="h-5 w-5" />
-            </div>
-            <h3 className="mt-3 font-black text-text-dark">Growth Focused</h3>
-            <p className="mt-1 text-sm text-text-dark/70">Role clarity, metrics, and performance-based progression.</p>
-          </div>
-          <div className="rounded-2xl border border-primary/12 bg-white p-5">
-            <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-              <BriefcaseBusiness className="h-5 w-5" />
-            </div>
-            <h3 className="mt-3 font-black text-text-dark">Meaningful Work</h3>
-            <p className="mt-1 text-sm text-text-dark/70">Contribute to business outcomes that help farmers scale sustainably.</p>
-          </div>
         </section>
       </div>
     </div>
