@@ -81,7 +81,6 @@ const Footer = () => {
                 { name: "Become a Dealer", href: "/dealer" },
                 { name: "Blog", href: "/blog" },
                 { name: "Careers", href: "/careers" },
-                { name: "Offer Letter", href: "/offer-letter" },
               ].map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="hover:text-secondary hover:translate-x-2 inline-flex items-center gap-2 transition-all duration-300">
