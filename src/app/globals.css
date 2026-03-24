@@ -25,7 +25,15 @@
   --white: #ffffff;
 }
 
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
+  width: 100%;
+  max-width: 100%;
   background:
     radial-gradient(circle at 15% 5%, rgba(243, 194, 75, 0.08), transparent 40%),
     radial-gradient(circle at 85% 15%, rgba(31, 125, 70, 0.08), transparent 45%),
@@ -40,6 +48,12 @@ body {
     -apple-system,
     sans-serif;
   overflow-x: hidden;
+}
+
+main {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 h1,

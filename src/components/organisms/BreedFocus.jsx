@@ -5,7 +5,7 @@ import { breeds } from "@/lib/data";
 
 export default function BreedFocus() {
   return (
-    <section className="relative py-24">
+    <section className="relative overflow-hidden py-24">
       {/* Background Glow */}
       <div className="absolute -top-40 left-[-10%] h-[400px] w-[400px] rounded-full bg-secondary/10 blur-[120px]" />
       <div className="absolute bottom-[-30%] right-[-10%] h-[500px] w-[500px] rounded-full bg-primary/10 blur-[140px]" />
