@@ -136,7 +136,7 @@ export default function ManufacturingPage() {
                 progress drives us, and your success defines us.{" "}
               </p>
 
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {/* <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 {promisePoints.map((point) => (
                   <div
                     key={point}
@@ -147,7 +147,7 @@ export default function ManufacturingPage() {
                     </p>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
 
             <div className="space-y-5">

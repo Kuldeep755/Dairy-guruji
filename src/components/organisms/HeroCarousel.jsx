@@ -62,13 +62,13 @@ export default function HeroCarousel() {
                     </p>
 
                     <div className="mt-8 sm:mt-10 flex flex-wrap gap-3 sm:gap-4">
-                      <Link
-                        href={slide.link}
-                        className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-secondary px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-bold text-text-dark shadow-2xl hover:bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-secondary/20"
-                      >
-                        {slide.cta}
-                        <ArrowRight className="h-5 w-5" />
-                      </Link>
+                        <Link
+                          href={slide.link}
+                          className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-secondary px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-bold text-text-dark shadow-2xl hover:bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-secondary/20"
+                        >
+                          {slide.cta}
+                          <ArrowRight className="h-5 w-5" />
+                        </Link>
                       <Link
                         href="/contact"
                         className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-white/10 px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-bold text-white backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all duration-300 hover:-translate-y-1"

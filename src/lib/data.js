@@ -153,8 +153,8 @@ export const heroSlides = [
     title: "Helping Indian Dairy Farmers To Grow.",
     subtitle:
       "सही जानकारी, अच्छे पोषण और नए तरीकों से मेरे भारतीय पशुपालन को जयादा मुनाफे का बनाना",
-    cta: "Become a Dealer",
-    link: "/dealer",
+    cta: "Products",
+    link: "/products",
   },
   {
     image: "/images/hero/slide5.jpeg",
@@ -162,7 +162,7 @@ export const heroSlides = [
     subtitle:
       "हम आपके डेयरी फ़ार्म को गोद लेकर उसे ज्यादा मुनाफ़े वाला बनाएंगे – ज्यादा दूध, स्वस्थ पशु, बेहतर नस्ल और कम खर्च के साथ",
     cta: "Start With Us",
-    link: "/dealer",
+    link: "/csr",
   },
 ];
 
