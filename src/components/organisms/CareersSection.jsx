@@ -52,11 +52,11 @@ export default function CareersSection() {
               </a>
 
               <a
-                href="mailto:dairyguruji@gmail.com"
+                href="mailto:dairygurujiindia@gmail.com"
                 className="flex items-center gap-4 text-gray-700 hover:text-primary transition"
               >
                 <Mail size={20} />
-                <span className="font-medium">dairyguruji@gmail.com</span>
+                <span className="font-medium">dairygurujiindia@gmail.com</span>
               </a>
             </div>
           </div>

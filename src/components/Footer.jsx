@@ -31,7 +31,6 @@ const Footer = () => {
                 </div>
               </div>
             </Link>
-
             <div className="bg-white/5 border border-white/10 p-4 sm:p-5 rounded-2xl mb-8 transform -rotate-1 hover:rotate-0 transition-transform duration-300">
               <p className="text-secondary text-lg sm:text-xl font-bold mb-1">
                 “व्यापार नहीं, रिश्ते बनाते हैं”
@@ -40,7 +39,6 @@ const Footer = () => {
                 Not Just Business, Building Relationships.
               </p>
             </div>
-
             <div className="flex items-center gap-3 mb-8">
               <div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-500/20 text-green-400">
                 <svg
@@ -60,8 +58,27 @@ const Footer = () => {
               <p className="font-semibold text-white/90 tracking-wide text-sm">
                 ISO 9001:2015 Certified Company
               </p>
+            </div>{" "}
+            <div className="flex items-center gap-3 mb-8">
+              <div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-500/20 text-green-400">
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={3}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+              <p className="font-semibold text-white/90 tracking-wide text-sm">
+                Fssai Certified & Lab Tested
+              </p>
             </div>
-
             <div className="flex gap-4">
               {[
                 {
@@ -169,7 +186,7 @@ const Footer = () => {
                   <Mail className="w-5 h-5 text-secondary" />
                 </div>
                 <a
-                  href="mailto:dairyguruji@gmail.com"
+                  href="mailto:dairygurujiindia@gmail.com"
                   className="hover:text-secondary font-medium transition-colors break-all"
                 >
                   dairygurujiindia@gmail.com

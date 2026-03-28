@@ -93,7 +93,7 @@ const ContactPage = () => {
                   <Mail size={18} className="mt-0.5 text-secondary" />
                   <div>
                     <p className="font-bold">Email</p>
-                    <p className="text-white/75">dairyguruji@gmail.com</p>
+                    <p className="text-white/75">dairygurujiindia@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex gap-3">
@@ -205,7 +205,7 @@ const ContactPage = () => {
             </p>
 
             <form 
-              action="https://formsubmit.co/dairyguruji@gmail.com" 
+              action="https://formsubmit.co/dairygurujiindia@gmail.com" 
               method="POST"
               className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-5"
             >

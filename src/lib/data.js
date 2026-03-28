@@ -161,8 +161,8 @@ export const heroSlides = [
     title: "Dairy Farm Adoption",
     subtitle:
       "हम आपके डेयरी फ़ार्म को गोद लेकर उसे ज्यादा मुनाफ़े वाला बनाएंगे – ज्यादा दूध, स्वस्थ पशु, बेहतर नस्ल और कम खर्च के साथ",
-    cta: "Start With Us",
-    link: "/csr",
+    cta: "Farm Adoption",
+    link: "/farmer-registration",
   },
 ];
 
@@ -355,9 +355,9 @@ export const teamMembers = [
   {
     name: "Himanshu Choudhary",
     role: "Founder",
-    bio: "Visionary founder driven by the mission to transform Indian dairy farming. Himanshu focuses on building long-term relationships with farmers and ensuring sustainable growth across rural communities.",
+    bio: "Visionary founder driven by the mission to transform Indian dairy farming. He focuses on building long-term relationships with farmers and ensuring sustainable growth across rural communities in India.",
     image: "/images/about/founder.jpg",
-    department: "Leadership",
+    // department: "Leadership",
     expertise: [
       "Farmer Relations",
       "Business Strategy",
@@ -370,9 +370,9 @@ export const teamMembers = [
   {
     name: "Sunny Choudhary",
     role: "Chief Operating  Officer",
-    bio: "Strategic leader executing the company vision with operational excellence. Sani drives innovation, market expansion, and ensures Dairy Guru Ji delivers consistent value to every farmer partner.",
+    bio: "Strategic leader executing the company vision with operational excellence. He drives innovation, market expansion, and ensures Dairy Guru Ji delivers consistent value to every farmer partner in India.",
     image: "/images/team/ceo.jpeg",
-    department: "Leadership",
+    // department: "Leadership",
     expertise: [
       "Operations Excellence",
       "Strategic Growth",
@@ -382,6 +382,71 @@ export const teamMembers = [
     linkedin: "#",
     highlight: "Leading company expansion to new markets",
     isCEO: true,
+  },
+
+  {
+    name: "Tejraj Jat",
+    role: "State Incharge of Rajasthan",
+    bio: "Strategic leader executing the company vision with operational excellence.He drives innovation, market expansion, and ensures Dairy Guru Ji delivers consistent value to every farmer partner In All Rajasthan.",
+    image: "/images/team/tejraj.jpeg",
+    // department: "Leadership",
+    expertise: [
+      "Operations Excellence",
+      "Strategic Growth",
+      "Market Expansion",
+      "Team Leadership",
+    ],
+    linkedin: "#",
+    highlight: "Leading company expansion to new markets",
+    isCEO: false,
+  },
+  {
+    name: "Krishna Sharma",
+    role: "State Incharge of Madhya Pradesh",
+    bio: "Strategic leader executing the company vision with operational excellence. He drives innovation, market expansion, and ensures Dairy Guru Ji delivers consistent value to every farmer partner In All Madhya Pradesh.",
+    image: "/images/team/krishna.jpeg",
+    // department: "Leadership",
+    expertise: [
+      "Operations Excellence",
+      "Strategic Growth",
+      "Market Expansion",
+      "Team Leadership",
+    ],
+    linkedin: "#",
+    highlight: "Leading company expansion to new markets",
+    isCEO: false,
+  },
+  {
+    name: "Pooja Chauhan",
+    role: "Human Resource Manager (HR)",
+    bio: "Strategic leader executing the company vision with operational excellence. He drives innovation, market expansion, and ensures Dairy Guru Ji delivers consistent value to every farmer partner In All India.",
+    image: "/images/team/hr.jpeg",
+    // department: "Leadership",
+    expertise: [
+      "Operations Excellence",
+      "Strategic Growth",
+      "Market Expansion",
+      "Team Leadership",
+    ],
+    linkedin: "#",
+    highlight: "Leading company expansion to new markets",
+    isCEO: false,
+  },
+  {
+    name: "Ankit Panwar",
+    role: "State Incharge of Uttar Pradesh",
+    bio: "Strategic leader executing the company vision with operational excellence. He drives innovation, market expansion, and ensures Dairy Guru Ji delivers consistent value to every farmer partner In All Uttar Pradesh.",
+    image: "/images/team/ankit.jpeg",
+    // department: "Leadership",
+    expertise: [
+      "Operations Excellence",
+      "Strategic Growth",
+      "Market Expansion",
+      "Team Leadership",
+    ],
+    linkedin: "#",
+    highlight: "Leading company expansion to new markets",
+    isCEO: false,
   },
 ];
 

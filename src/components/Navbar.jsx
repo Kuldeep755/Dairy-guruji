@@ -39,6 +39,7 @@ const navItems = [
   { href: "/careers", label: "Careers" },
   { href: "/contact", label: "Contact" },
   { href: "/products", label: "Products" },
+  { href: "/team", label: "Our Team" },
 ];
 
 const Navbar = () => {

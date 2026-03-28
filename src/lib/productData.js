@@ -109,7 +109,7 @@ const baseProducts = [
     specialNote: "यह फीड फॉर्मूलेशन ऑस्ट्रेलिया में विशेष रूप से भारत की पशु नस्लों को ध्यान में रखकर तैयार की गई है। इसके परिणाम बहुत ही शानदार देखने को मिलेंगे।",
     dosage: "Adult: 100 g/day | Young: 50 g/day",
     pack: "1 kg & 5 kg",
-    tag: "Mineral Support",
+    tag: "Mineral Mixture",
     problem: "Low milk production, repeat breeding, weak immunity, poor growth, and mineral deficiency",
     farmerStory: {
       quote: "Milk output was low and animals were repeating in breeding. After regular use of Mineral Mixture, fertility improved and production became more stable.",

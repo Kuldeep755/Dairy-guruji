@@ -64,7 +64,7 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      <section className="relative mx-auto mt-8 max-w-6xl px-4 sm:px-6">
+      {/* <section className="relative mx-auto mt-8 max-w-6xl px-4 sm:px-6">
         <div className="rounded-[1.75rem] border border-primary/10 bg-white p-5 shadow-[0_14px_40px_rgba(20,33,45,0.05)] md:p-6">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <div className="relative w-full lg:max-w-xl">
@@ -105,7 +105,7 @@ export default function ProductsPage() {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
       <section className="relative mx-auto mt-8 max-w-6xl px-4 sm:px-6">
         {filteredProducts.length ? (
           <div className="space-y-4">

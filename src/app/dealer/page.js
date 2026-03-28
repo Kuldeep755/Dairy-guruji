@@ -434,7 +434,7 @@ export default function DealerPage() {
             </div>
 
             <form 
-              action="https://formsubmit.co/dairyguruji@gmail.com" 
+              action="https://formsubmit.co/dairygurujindia@gmail.com" 
               method="POST"
               onSubmit={handleSubmit} 
               className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-8"

@@ -54,7 +54,7 @@ const getYoutubeEmbedUrl = (url) => {
 const warehouseMedia = {
   gallery: [
     {
-      video: "/images/warehouse/warehouse14.mp4",
+      video: "/images/warehouse/warehouse.mp4",
       alt: "From fully automated production lines to strict lab testing and expert supervision, every product is crafted to deliver consistent quality, better animal health, and higher milk production.",
       title: "World class manufacturing",
     },
@@ -81,9 +81,8 @@ const warehouseMedia = {
     },
     {
       src: "/images/warehouse/warehouse14.jpeg",
-      alt: "Finished goods ready for dispatch from the warehouse",
+      alt: "Dairy Guruji exists to bring real happiness to dairy farmers. every farmer feels confident, secure, and proud of their growing dairy journey.",
       title: "Formulate with purpose",
-      desc: "",
     },
   ],
 };

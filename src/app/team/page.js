@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { CheckCircle2, Linkedin, Sparkles } from "lucide-react";
 import { teamMembers } from "@/lib/data";
 
 const ringStyles = [
@@ -45,6 +44,7 @@ export default function TeamPage() {
           priority
         />
       </section>
+
       <section className="relative px-4 py-16 sm:px-6 md:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
@@ -60,8 +60,12 @@ export default function TeamPage() {
             </h1>
 
             <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-text-dark/70 md:text-lg">
-              The people behind Dairy Guru Ji who turn field knowledge,
+              The people behind Dairy Guruji turn real field knowledge,
               practical nutrition, and farmer-first support into daily action.
+              With 200+ team members(Sales Executives ,Sales
+              officers,ASM,RSM,State Incharges,LSA,Veterinarians), everyone is
+              treated like family Members, working together to support dairy
+              farmers.
             </p>
           </div>
 
@@ -105,33 +109,58 @@ export default function TeamPage() {
                     <p className="mt-5 text-sm leading-7 text-text-dark/72">
                       {member.bio}
                     </p>
-
-                    {member.expertise?.length > 0 && (
-                      <div className="mt-6 flex flex-wrap justify-center gap-2">
-                        {member.expertise.slice(0, 4).map((item) => (
-                          <span
-                            key={item}
-                            className={`rounded-full border px-3 py-1 text-[11px] font-bold ${style.chip}`}
-                          >
-                            {item}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-
-                    {/* <div className="mt-6 flex items-center justify-center border-t border-primary/10 pt-4">
-                      <a
-                        href={member.linkedin}
-                        className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-primary/15 bg-white text-primary transition hover:-translate-y-0.5 hover:bg-primary hover:text-white"
-                        title={`${member.name} on LinkedIn`}
-                      >
-                        <Linkedin size={16} />
-                      </a>
-                    </div> */}
                   </div>
                 </article>
               );
             })}
+          </div>
+        </div>
+      </section>
+      <section className="relative px-4 py-12 sm:px-6 md:py-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-3xl text-center mb-10">
+            <h2 className="mt-4 text-3xl font-black uppercase leading-none text-text-dark md:text-4xl">
+              Team <span className="text-primary">Photos</span>
+            </h2>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="relative overflow-hidden rounded-2xl shadow-lg">
+              <Image
+                src="/images/team/team-1.jpeg"
+                alt="Dairy Guru Ji Team 1"
+                width={800}
+                height={600}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+            <div className="relative overflow-hidden rounded-2xl shadow-lg">
+              <Image
+                src="/images/team/team2.jpeg"
+                alt="Dairy Guru Ji Team 2"
+                width={800}
+                height={600}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+            <div className="relative overflow-hidden rounded-2xl shadow-lg">
+              <Image
+                src="/images/team/team4.jpeg"
+                alt="Dairy Guru Ji Team 2"
+                width={800}
+                height={600}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+            <div className="relative overflow-hidden rounded-2xl shadow-lg">
+              <Image
+                src="/images/team/team3.jpeg"
+                alt="Dairy Guru Ji Team 2"
+                width={800}
+                height={600}
+                className="w-full h-auto object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
