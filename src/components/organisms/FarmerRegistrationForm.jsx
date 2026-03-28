@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import FarmerRegistrationStepOne from "@/components/organisms/farmer-registration/FarmerRegistrationStepOne";
 import FarmerRegistrationStepTwo from "@/components/organisms/farmer-registration/FarmerRegistrationStepTwo";
@@ -31,6 +32,7 @@ function formDataToObject(formElement) {
 }
 
 export default function FarmerRegistrationForm() {
+  const router = useRouter();
   const [currentStep, setCurrentStep] = useState(1);
   const [selectedGoals, setSelectedGoals] = useState([]);
   const [selectedChallenge, setSelectedChallenge] = useState("");
@@ -39,6 +41,7 @@ export default function FarmerRegistrationForm() {
   const [gpsStatus, setGpsStatus] = useState("");
   const [submitMessage, setSubmitMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   const [registrationData, setRegistrationData] = useState({});
 
   const toggleGoal = (goal) => {
@@ -137,6 +140,12 @@ export default function FarmerRegistrationForm() {
         result.message ||
           "Farmer registration submitted successfully. The data has been sent to Google Sheets.",
       );
+      setIsSuccess(true);
+
+      // Redirect to home page after 3 seconds
+      setTimeout(() => {
+        router.push("/");
+      }, 3000);
     } catch (error) {
       setSubmitMessage(
         error.message ||
@@ -149,6 +158,40 @@ export default function FarmerRegistrationForm() {
 
   return (
     <div className="space-y-5">
+      {/* Success Modal */}
+      {isSuccess && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+          <div className="mx-4 w-full max-w-md rounded-2xl bg-white p-8 text-center shadow-2xl">
+            <div className="mb-4 flex justify-center">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
+                <svg
+                  className="h-8 w-8 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+            </div>
+            <h2 className="mb-2 text-2xl font-bold text-[#202020]">
+              Registration Successful!
+            </h2>
+            <p className="mb-4 text-[#4a4a4a]">
+              {submitMessage || "Your farmer registration has been submitted successfully."}
+            </p>
+            <p className="text-sm text-[#888888]">
+              Redirecting to home page in 3 seconds...
+            </p>
+          </div>
+        </div>
+      )}
+
       <StepProgress currentStep={currentStep} stepLabels={stepLabels} />
 
       {currentStep === 1 ? (
