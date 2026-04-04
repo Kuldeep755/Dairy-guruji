@@ -1,24 +1,14 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import { backendApiUrl } from "@/lib/api";
+import { AUTH_COOKIE_NAME, verifySessionToken } from "@/lib/auth";
 import AdminSidebar from "@/components/admin/AdminSidebar";
 
 export default async function AdminLayout({ children }) {
   const cookieStore = await cookies();
-  const cookieHeader = cookieStore.toString();
+  const token = cookieStore.get(AUTH_COOKIE_NAME)?.value;
+  const session = verifySessionToken(token);
 
-  let session = null;
-  try {
-    const response = await fetch(backendApiUrl("/api/auth/session"), {
-      headers: { cookie: cookieHeader },
-      cache: "no-store",
-    });
-    session = await response.json();
-  } catch {
-    redirect("/login?next=/admin");
-  }
-
-  if (!session?.authenticated) {
+  if (!session) {
     redirect("/login?next=/admin");
   }
 

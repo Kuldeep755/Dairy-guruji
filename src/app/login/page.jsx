@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import { backendApiUrl } from "@/lib/api";
+import { AUTH_COOKIE_NAME, verifySessionToken } from "@/lib/auth";
 import LoginForm from "./LoginForm";
 
 function getNextPath(rawNext) {
@@ -17,18 +17,12 @@ function getNextPath(rawNext) {
 
 export default async function LoginPage({ searchParams }) {
   const cookieStore = await cookies();
-  const cookieHeader = cookieStore.toString();
   const resolvedSearchParams = await searchParams;
   const nextPath = getNextPath(resolvedSearchParams?.next);
-  const response = await fetch(backendApiUrl("/api/auth/session"), {
-    headers: {
-      cookie: cookieHeader,
-    },
-    cache: "no-store",
-  });
-  const session = await response.json();
+  const token = cookieStore.get(AUTH_COOKIE_NAME)?.value;
+  const session = verifySessionToken(token);
 
-  if (session?.authenticated) {
+  if (session) {
     redirect(nextPath);
   }
 
