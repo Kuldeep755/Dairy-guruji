@@ -216,29 +216,6 @@ const Navbar = () => {
               Become Dealer
             </Button>
           </Link>
-
-          {authState.checked && authState.isAuthenticated ? (
-            <>
-              <Link href="/admin">
-                <Button variant="ghost" className="border border-white/20">
-                  Admin
-                </Button>
-              </Link>
-              <Link href="/logout">
-                <Button variant="ghost" className="border border-white/20">
-                  Logout
-                </Button>
-              </Link>
-            </>
-          ) : null}
-
-          {authState.checked && !authState.isAuthenticated ? (
-            <Link href="/login">
-              <Button variant="ghost" className="border border-white/20">
-                Login
-              </Button>
-            </Link>
-          ) : null}
         </div>
 
         {/* Mobile Menu */}
@@ -325,38 +302,6 @@ const Navbar = () => {
                   </Button>
                 </Link>
               </SheetClose>
-
-              {authState.checked && authState.isAuthenticated ? (
-                <>
-                  <SheetClose asChild>
-                    <Link
-                      href="/admin"
-                      className="px-4 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white"
-                    >
-                      Admin Panel
-                    </Link>
-                  </SheetClose>
-                  <SheetClose asChild>
-                    <Link
-                      href="/logout"
-                      className="px-4 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white"
-                    >
-                      Logout
-                    </Link>
-                  </SheetClose>
-                </>
-              ) : null}
-
-              {authState.checked && !authState.isAuthenticated ? (
-                <SheetClose asChild>
-                  <Link
-                    href="/login"
-                    className="px-4 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white"
-                  >
-                    Login
-                  </Link>
-                </SheetClose>
-              ) : null}
             </div>
           </SheetContent>
         </Sheet>

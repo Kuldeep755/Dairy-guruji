@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   DollarSign,
   TrendingUp,
@@ -27,11 +28,13 @@ import {
 
 import { Input, Textarea, Select, FormField } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import FormToast from "@/components/ui/form-toast";
 import { backendFetch } from "@/lib/api";
 
 
 
 export default function DealerPage() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -82,6 +85,10 @@ export default function DealerPage() {
         investment: "",
         message: "",
       });
+
+      setTimeout(() => {
+        router.push("/");
+      }, 2000);
     } catch (error) {
       setSubmitState({
         type: "error",
@@ -162,6 +169,11 @@ export default function DealerPage() {
 
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-[#f8f9fa] via-[#e9ecef] to-[#dee2e6] overflow-hidden">
+      <FormToast
+        message={submitState.message}
+        type={submitState.type || "success"}
+        onClose={() => setSubmitState({ type: "", message: "" })}
+      />
       {/* Decorative background */}
       <div className="pointer-events-none absolute -top-32 left-0 h-[40rem] w-[40rem] rounded-full bg-primary/20 blur-[100px]" />
       <div className="pointer-events-none absolute top-40 right-0 h-[30rem] w-[30rem] rounded-full bg-blue-500/10 blur-[100px]" />

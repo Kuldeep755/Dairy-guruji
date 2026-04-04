@@ -20,9 +20,9 @@
 }
 
 :root {
-  --primary: oklch(0.205 0 0);
-  --secondary: oklch(0.97 0 0);
-  --accent: oklch(0.97 0 0);
+  --primary: #1f7d46;
+  --secondary: #f3c24b;
+  --accent: #79b062;
   --bg-dark: #0f1822;
   --bg-light: #f5f2e8;
   --text-dark: #172432;

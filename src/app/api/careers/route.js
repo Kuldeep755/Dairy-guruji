@@ -1,98 +1,47 @@
 import { NextResponse } from "next/server";
-
-function buildWebhookError(responseText, status) {
-  const normalizedText = responseText.toLowerCase();
-
-  if (
-    normalizedText.includes("<!doctype html") &&
-    (normalizedText.includes("access denied") ||
-      normalizedText.includes("you need access") ||
-      normalizedText.includes("requesting_access"))
-  ) {
-    return {
-      error:
-        "Google Apps Script denied access to the webhook. Deploy the script as a Web app and set access to Anyone, then update GOOGLE_SHEETS_WEBHOOK_URL with the latest /exec URL.",
-      details: "Google returned an access-denied HTML page instead of JSON.",
-      status,
-    };
-  }
-
-  return {
-    error: responseText || "Google Sheets webhook rejected the submission.",
-    status,
-  };
-}
+import { backendApiUrl } from "@/lib/api";
 
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { name, email, phoneNumber, address, lsa, experience } = body;
+    const { name, email, phoneNumber, address, state, city, lsa } = body || {};
 
-    if (!name || !email || !phoneNumber || !address || !lsa) {
+    if (!name || !email || !phoneNumber || !address || !state || !city || !lsa) {
       return NextResponse.json(
-        { error: "Please fill in all required fields." },
-        { status: 400 }
+        { error: "Please fill in all required fields (including state and city)." },
+        { status: 400 },
       );
     }
 
-    const webhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
-
-    if (!webhookUrl) {
-      return NextResponse.json(
-        { error: "Google Sheets webhook is not configured yet." },
-        { status: 500 }
-      );
-    }
-
-    const payload = {
-      timestamp: new Date().toLocaleString("en-GB", {
-        timeZone: "Asia/Kolkata",
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: false,
-      }),
-      fullName: name,
-      email,
-      phoneNumber,
-      address,
-      lsa,
-      yearsOfExp: experience || "",
-    };
-
-    const response = await fetch(webhookUrl, {
+    const response = await fetch(backendApiUrl("/api/forms/careers"), {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(payload),
+      body: JSON.stringify(body),
       cache: "no-store",
     });
 
-    const responseText = await response.text();
+    const result = await response.json().catch(() => ({}));
 
     if (!response.ok) {
-      const { error, details } = buildWebhookError(
-        responseText,
-        response.status
-      );
-
       return NextResponse.json(
-        { error, details },
-        { status: 502 }
+        { error: result?.error || "Failed to submit career application." },
+        { status: response.status || 500 },
       );
     }
 
-    return NextResponse.json({ ok: true });
+    return NextResponse.json({
+      ok: true,
+      message: result?.message || "Career application submitted successfully.",
+    });
+    
   } catch (error) {
     return NextResponse.json(
       {
         error: error.message || "Failed to submit application.",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

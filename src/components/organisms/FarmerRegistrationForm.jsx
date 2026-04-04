@@ -139,7 +139,7 @@ export default function FarmerRegistrationForm() {
 
       setSubmitMessage(
         result.message ||
-          "Farmer registration submitted successfully. The data has been sent to Google Sheets.",
+          "Farmer registration submitted successfully. Your details have been saved.",
       );
       setIsSuccess(true);
 

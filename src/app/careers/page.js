@@ -3,7 +3,9 @@
 import React, { useState } from "react";
 import { ArrowRight, BriefcaseBusiness } from "lucide-react";
 import { CitySelect, StateSelect } from "react-country-state-city";
+import { useRouter } from "next/navigation";
 import { backendFetch } from "@/lib/api";
+import FormToast from "@/components/ui/form-toast";
 
 const initialFormState = {
   name: "",
@@ -19,6 +21,7 @@ const initialFormState = {
 const INDIA_COUNTRY_ID = 101;
 
 const CareersPage = () => {
+  const router = useRouter();
   const [formData, setFormData] = useState(initialFormState);
   const [selectedStateId, setSelectedStateId] = useState(0);
   const [selectResetKey, setSelectResetKey] = useState(0);
@@ -74,6 +77,10 @@ const CareersPage = () => {
       setFormData(initialFormState);
       setSelectedStateId(0);
       setSelectResetKey((current) => current + 1);
+
+      setTimeout(() => {
+        router.push("/");
+      }, 2000);
     } catch (error) {
       setSubmitState({
         type: "error",
@@ -88,6 +95,11 @@ const CareersPage = () => {
 
   return (
     <div className="relative overflow-hidden bg-gradient-to-b from-[#f7f4ea] via-[#f3efdf] to-[#f8f6ee] pb-24 pt-28">
+      <FormToast
+        message={submitState.message}
+        type={submitState.type || "success"}
+        onClose={() => setSubmitState({ type: "", message: "" })}
+      />
       <div className="pointer-events-none absolute -top-24 left-[-10%] h-96 w-96 rounded-full bg-primary/20 blur-3xl" />
       <div className="pointer-events-none absolute top-10 right-[-10%] h-[28rem] w-[28rem] rounded-full bg-secondary/30 blur-3xl" />
 

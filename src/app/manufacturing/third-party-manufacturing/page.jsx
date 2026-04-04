@@ -6,8 +6,10 @@ import { manufacturingVideo, thirdPartyManufacturingHero } from "@/lib/data";
 import Image from "next/image";
 import { useState } from "react";
 import { ArrowRight, Lightbulb, Globe2, Sprout } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 import { Input, Textarea, FormField } from "@/components/ui/input";
+import FormToast from "@/components/ui/form-toast";
 import { backendFetch } from "@/lib/api";
 
 const getYoutubeEmbedUrl = (url) => {
@@ -56,6 +58,7 @@ const getYoutubeEmbedUrl = (url) => {
   return "";
 };
 export default function ThirdPartyManufacturingPage() {
+  const router = useRouter();
   const manufacturingVideoEmbedUrl = getYoutubeEmbedUrl(manufacturingVideo.url);
 
   const [formData, setFormData] = useState({
@@ -105,6 +108,10 @@ export default function ThirdPartyManufacturingPage() {
         volume: "",
         message: "",
       });
+
+      setTimeout(() => {
+        router.push("/");
+      }, 2000);
     } catch (error) {
       setSubmitState({
         type: "error",
@@ -255,6 +262,11 @@ export default function ThirdPartyManufacturingPage() {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-[linear-gradient(180deg,#f8fbfa_0%,#ffffff_28%,#f8fbfa_100%)] ">
+      <FormToast
+        message={submitState.message}
+        type={submitState.type || "success"}
+        onClose={() => setSubmitState({ type: "", message: "" })}
+      />
       <PageHero
         image={thirdPartyManufacturingHero.image}
         title={thirdPartyManufacturingHero.title}

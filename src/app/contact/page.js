@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   PhoneCall,
   MessageCircle,
@@ -18,10 +19,12 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Input, Textarea, FormField } from "@/components/ui/input";
+import FormToast from "@/components/ui/form-toast";
 import Link from "next/link";
 import { backendFetch } from "@/lib/api";
 
 const ContactPage = () => {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -66,6 +69,10 @@ const ContactPage = () => {
         business_type: "Dairy Farmer",
         message: "",
       });
+
+      setTimeout(() => {
+        router.push("/");
+      }, 2000);
     } catch (error) {
       setSubmitState({
         type: "error",
@@ -79,6 +86,11 @@ const ContactPage = () => {
 
   return (
     <div className="relative min-h-screen bg-bg-light pt-32 pb-20">
+      <FormToast
+        message={submitState.message}
+        type={submitState.type || "success"}
+        onClose={() => setSubmitState({ type: "", message: "" })}
+      />
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-24 left-0 h-80 w-80 rounded-full bg-secondary/20 blur-3xl" />
         <div className="absolute top-40 right-0 h-96 w-96 rounded-full bg-primary/15 blur-3xl" />
