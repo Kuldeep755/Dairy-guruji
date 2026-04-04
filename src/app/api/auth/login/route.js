@@ -1,10 +1,5 @@
 import { NextResponse } from "next/server";
-import {
-  AUTH_COOKIE_NAME,
-  createSessionToken,
-  getAuthCookieOptions,
-  isValidAdminCredentials,
-} from "@/lib/auth";
+import { backendApiUrl } from "@/lib/api";
 
 export async function POST(request) {
   try {
@@ -12,21 +7,44 @@ export async function POST(request) {
     const username = String(body?.username || "").trim();
     const password = String(body?.password || "");
 
-    if (!isValidAdminCredentials(username, password)) {
+    if (!username || !password) {
       return NextResponse.json(
-        { ok: false, message: "Invalid username or password." },
-        { status: 401 },
+        { ok: false, message: "Username and password are required." },
+        { status: 400 },
       );
     }
 
-    const token = createSessionToken(username);
-    const response = NextResponse.json({ ok: true });
-    response.cookies.set(AUTH_COOKIE_NAME, token, getAuthCookieOptions());
+    const cookieHeader = request.headers.get("cookie") || "";
+    const backendResponse = await fetch(backendApiUrl("/api/auth/login"), {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        cookie: cookieHeader,
+      },
+      body: JSON.stringify({ username, password }),
+      cache: "no-store",
+    });
+
+    const data = await backendResponse.json().catch(() => ({
+      ok: false,
+      message: "Unable to login. Please try again.",
+    }));
+
+    const response = NextResponse.json(data, { status: backendResponse.status });
+    const setCookieHeader = backendResponse.headers.get("set-cookie");
+
+    if (setCookieHeader) {
+      response.headers.set("set-cookie", setCookieHeader);
+    }
+
     return response;
-  } catch {
+  } catch (error) {
     return NextResponse.json(
-      { ok: false, message: "Unable to login. Please try again." },
-      { status: 400 },
+      {
+        ok: false,
+        message: error?.message || "Unable to login. Please try again.",
+      },
+      { status: 500 },
     );
   }
 }

@@ -1,18 +1,23 @@
-import { cookies } from "next/headers";
-import { AUTH_COOKIE_NAME, verifySessionToken } from "@/lib/auth";
+import { NextResponse } from "next/server";
+import { backendApiUrl } from "@/lib/api";
 
-export async function GET() {
-  const cookieStore = await cookies();
-  const token = cookieStore.get(AUTH_COOKIE_NAME)?.value;
-  const session = verifySessionToken(token);
+export async function GET(request) {
+  const cookieHeader = request.headers.get("cookie") || "";
 
-  if (!session) {
-    return Response.json({ authenticated: false });
+  try {
+    const backendResponse = await fetch(backendApiUrl("/api/auth/session"), {
+      headers: {
+        cookie: cookieHeader,
+      },
+      cache: "no-store",
+    });
+
+    const data = await backendResponse.json().catch(() => ({
+      authenticated: false,
+    }));
+
+    return NextResponse.json(data, { status: backendResponse.status });
+  } catch {
+    return NextResponse.json({ authenticated: false }, { status: 200 });
   }
-
-  return Response.json({
-    authenticated: true,
-    username: session.username,
-    expiresAt: session.exp,
-  });
 }
